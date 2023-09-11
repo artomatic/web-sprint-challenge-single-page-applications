@@ -5,6 +5,7 @@ import * as Yup from 'yup'
 import axios from 'axios'
 import styled from 'styled-components'
 import Form from './Components/Form'
+import Home from './Components/Home'
 
 const errorsList = {
   nameRequired: 'please enter your name',
@@ -51,42 +52,7 @@ const OrderButton = styled.div `
   align-self: right;
   padding: 2%;
   margin: 0;
-`
-
-const Title = styled.h1 `
-  margin: 0;
-  text-align: center;
-  background-color: darkred;
-  padding-top: 2em;
-  padding-bottom: 0.5em;
-  color: white;
-  font-size: 7em;
-  font-family: cursive;
-`
-
-const Slogan = styled.h2 `
-  font-size: 1em;
-  /* padding: 11em; */
-  text-align: center;
-  vertical-align: top;
-  height: 10em;
-  padding: 2em;
-  margin: 0;
-  background-color: lightsalmon;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: white;
-  font-size: x-large;
-`
-
-
-
-
-
-
-
-
-
-
+`;
 
 const App = () => {
 
@@ -150,27 +116,7 @@ const App = () => {
   useEffect( () => {
     formSchema.isValid(formData)
       .then(valid => setDisabled(!valid))
-  }, [formData])
-
-
-  const Home = () => {
-    return (
-      <>
-      <div>
-      <Title>Bloomtech Eats</Title>
-      </div>
-      <div>
-      <Slogan>Grub before you type.</Slogan>
-      </div>
-      </>
-    )
-  }
-
-
-
-
-
-
+  }, [formData]);
 
   return (
     <>
@@ -196,8 +142,6 @@ const App = () => {
       </Routes>
     </>
   );
-  
-
-};
+}
 
 export default App;
